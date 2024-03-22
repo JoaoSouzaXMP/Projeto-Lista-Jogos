@@ -4,7 +4,7 @@ from flask_bcrypt import generate_password_hash
 ''' Conecta ao SQLExpress '''
 print('Conectando...')
 try:
-    SERVER = 'REDRAGON-PC\SQLEXPRESS'
+    SERVER = '.\SQLEXPRESS'
     DRIVER = 'ODBC Driver 17 for SQL Server'
     CONNECTIONSTRING = f'DRIVER={DRIVER};SERVER={SERVER};Trusted_Connection=yes;'
     CONN = pyodbc.connect(CONNECTIONSTRING, autocommit = True)
@@ -18,9 +18,9 @@ except pyodbc.Error as ex:
     exit()
 
 ''' CRIAR BANCO E TABELAS '''
-CURSOR.execute(''' DROP DATABASE IF EXISTS dbAula ''')
-CURSOR.execute(''' CREATE DATABASE dbAula ''')
-CURSOR.execute(''' USE dbAula ''')
+CURSOR.execute(''' DROP DATABASE IF EXISTS dbListaJogos ''')
+CURSOR.execute(''' CREATE DATABASE dbListaJogos ''')
+CURSOR.execute(''' USE dbListaJogos ''')
 TABELAS = {}
 TABELAS['Jogos'] = ('''
     CREATE TABLE tblJogos(

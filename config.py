@@ -8,10 +8,9 @@ SECRET_KEY = 'alura'
 ''' CONEXÃO SQL SERVER '''
 # Usar mesmo SERVER e DATABASE especificados no arquivo "create_database.py", DRIVER muda conforme a instalação SQL Server.
 try:
-    SERVER = 'REDRAGON-PC\SQLEXPRESS'
-    DATABASE = 'dbAula'
+    SERVER = '.\SQLEXPRESS'
     DRIVER = 'ODBC Driver 17 for SQL Server'
-    CONNECTIONSTRING = f'DRIVER={DRIVER};SERVER={SERVER};DATABASE={DATABASE};Trusted_Connection=yes;'
+    CONNECTIONSTRING = f'DRIVER={DRIVER};SERVER={SERVER};DATABASE=dbListaJogos;Trusted_Connection=yes;'
     CONN = pyodbc.connect(CONNECTIONSTRING, autocommit = True)
     CURSOR = CONN.cursor()
 except pyodbc.Error as ex:

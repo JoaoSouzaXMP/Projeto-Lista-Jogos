@@ -24,12 +24,12 @@ def cadastrarjogo():
     novo_jogo = Jogo(form.nome.data,form.categoria.data,form.console.data)
     if Jogo.consultarnome(novo_jogo): 
         flash('Jogo já existe!')
-        return redirect(url_for('index'))
+        return redirect(url_for('novojogo'))
     else:
         Jogo.adicionar(novo_jogo)
         row = Jogo.consultarnome(novo_jogo)
         arquivo = request.files['arquivo']
-        Imagem.salvar_imagem(row[0],arquivo)
+        Imagem.salvar(row[0],arquivo)
         # upload_path = app.config['UPLOAD_PATH']
         # timestamp = time.time()
         # arquivo.save(f'{upload_path}/capa{row[0]}-{timestamp}.jpg')
@@ -43,10 +43,8 @@ def editar(id):
     else:
         jogo = Jogo.consultarid(id)
         form = FormularioJogo()
-        form.nome.data = jogo[1]
-        form.categoria.data = jogo[2]
-        form.console.data = jogo[3]
-        capa_jogo = Imagem.recuperar_imagem(id)
+        id,form.nome.data,form.categoria.data,form.console.data = jogo
+        capa_jogo = Imagem.recuperar(id)
         # capa_jogo = recupera_imagem(id)
         return render_template('editar.html', titulo='EDITANDO JOGO', id=id, capa_jogo=capa_jogo, form=form)
 
@@ -55,7 +53,7 @@ def atualizar():
     form = FormularioJogo(request.form)
     if form.validate_on_submit():
         Jogo.atualizar(request.form['id'],form.nome.data,form.categoria.data,form.console.data)
-        Imagem.editar_imagem(request.form['id'],request.files['arquivo'])
+        Imagem.editar(request.form['id'],request.files['arquivo'])
         # upload_path = app.config['UPLOAD_PATH']
         # timestamp = time.time()
         # deletar_arquivo(request.form['id'])

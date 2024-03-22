@@ -48,3 +48,4 @@ SQL_QUERYS['UpdateSenhaUsuario'] = '''UPDATE tblUsuarios SET Senha = ? WHERE nom
 SQL_QUERYS['SelectImagem'] = '''SELECT Imagem FROM tblImagens WHERE JogoID = ?'''
 SQL_QUERYS['InsertImagem'] = '''INSERT INTO tblImagens VALUES (?,?)'''
 SQL_QUERYS['UpdateImagem'] = '''UPDATE tblImagens SET Imagem = ? WHERE JogoID = ?'''
+SQL_QUERYS['DeleteImagem'] = '''DELETE tblImagens WHERE JogoID = ?'''

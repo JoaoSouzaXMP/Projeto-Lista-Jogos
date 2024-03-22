@@ -21,6 +21,7 @@ class Jogo:
     def atualizar(id,nome,categoria,console):
         CURSOR.execute(SQL_QUERYS['UpdateJogo'],nome,categoria,console,id)
     def deletar(id):
+        Imagem.excluir(id)
         CURSOR.execute(SQL_QUERYS['DeleteJogo'],id)
 
 class Usuario:
@@ -37,21 +38,23 @@ class Usuario:
         CURSOR.execute(SQL_QUERYS['UpdateSenhaUsuario'],self._senha,self._nome)
 
 class Imagem:
-    def recuperar_imagem(id):
+    def recuperar(id):
         img_data = CURSOR.execute(SQL_QUERYS['SelectImagem'],id).fetchone()
         if img_data:
             img_base64 = base64.b64encode(img_data[0]).decode('utf-8')
             return img_base64
         return False
-    def salvar_imagem(id,arquivo):
+    def salvar(id,arquivo):
         img_bytes = arquivo.read()
         arquivo.seek(0)
         CURSOR.execute(SQL_QUERYS['InsertImagem'],id,img_bytes)
-    def editar_imagem(id,arquivo):
+    def editar(id,arquivo):
         row = CURSOR.execute(SQL_QUERYS['SelectImagem'],id).fetchone()
         if row:
             img_bytes = arquivo.read()
             arquivo.seek(0)
             CURSOR.execute(SQL_QUERYS['UpdateImagem'],img_bytes,id)
         else:
-            Imagem.salvar_imagem(id,arquivo)
+            Imagem.salvar(id,arquivo)
+    def excluir(id):
+        CURSOR.execute(SQL_QUERYS['DeleteImagem'],id)
