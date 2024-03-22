@@ -15,10 +15,10 @@ Conceitos aprendidos na plataforma [Alura](https://www.alura.com.br/).
 * Backup do Banco de Dados
 
 # Diagrama das tabelas
-![Diagrama-Tabelas](uploads\imgs\diagrama_tabelas.png)
+![Diagrama-Tabelas](https://github.com/JoaoSouzaXMP/Projeto-Lista-Jogos/blob/main/uploads/imgs/diagrama_tabelas.png)
 
 # Visualização
-<video controls src="uploads/imgs/visualização.mp4" title="Title"></video>
+<video controls src="https://github.com/JoaoSouzaXMP/Projeto-Lista-Jogos/blob/main/uploads/imgs/visualiza%C3%A7%C3%A3o.mp4" title="visualização.mp4"></video>
 # Instalando e Executando
 
 > [!IMPORTANT]
@@ -61,7 +61,7 @@ python -m pip install werkzeug
 ## Iniciando o Programa
 ### Ajustes no codigo
 Se instalou a mesma versão do SQL Server e não alterou os parâmetros padrão da instalação, então não vai precisar ajustar os arquivos, mas se alterou, insira nos arquivos create_database.py e config.py as duas variáveis da ConnectionString, o DRIVER e o SERVER:
-![alt text](uploads/imgs/ConnectionStringg.jpg)
+![ConnectionString](https://github.com/JoaoSouzaXMP/Projeto-Lista-Jogos/blob/main/uploads/imgs/ConnectionStringg.jpg)
 
 #### Com todos os ajustes feitos utilize o comando para rodar a aplicação.
 ```
