@@ -18,7 +18,8 @@ Conceitos aprendidos na plataforma [Alura](https://www.alura.com.br/).
 ![Diagrama-Tabelas](https://github.com/JoaoSouzaXMP/Projeto-Lista-Jogos/blob/main/uploads/imgs/diagrama_tabelas.png)
 
 # Visualização
-<video controls src="https://github.com/JoaoSouzaXMP/Projeto-Lista-Jogos/blob/main/uploads/imgs/visualiza%C3%A7%C3%A3o.mp4" title="visualização.mp4"></video>
+<img width="100%" height="400" src='https://github.com/JoaoSouzaXMP/Projeto-Lista-Jogos/blob/main/uploads/imgs/visualiza%C3%A7%C3%A3o.gif'>
+
 # Instalando e Executando
 
 > [!IMPORTANT]
